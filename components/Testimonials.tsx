@@ -15,7 +15,7 @@ interface Testimonial {
 
 const testimonials: Testimonial[] = [
   {
-    quote: "Altrix delivered our new website in under two weeks. Enquiries have tripled since launch — we're booked out two months ahead.",
+    quote: "Webio delivered our new website in under two weeks. Enquiries have tripled since launch — we're booked out two months ahead.",
     name: "Priya S.",
     role: "Business Owner",
     location: "Jaipur",
@@ -31,7 +31,7 @@ const testimonials: Testimonial[] = [
     stars: 5,
   },
   {
-    quote: "Our new site looks more premium than competitors who spent 5× more. Altrix just gets it.",
+    quote: "Our new site looks more premium than competitors who spent 5× more. Webio just gets it.",
     name: "Anika T.",
     role: "Consultant",
     location: "Mumbai",

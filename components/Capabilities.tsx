@@ -71,7 +71,7 @@ const capabilities = [
 
 export default function Capabilities() {
   return (
-    <section id="services" className="relative py-16 sm:py-24 overflow-hidden z-10">
+    <section id="services" className="relative py-12 sm:py-16 overflow-hidden z-10">
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         {/* Ambient background bloom */}
         <div className="absolute top-[40%] right-[10%] w-[350px] h-[350px] rounded-full bg-altrix-violet/5 blur-[100px]" />

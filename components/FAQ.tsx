@@ -48,7 +48,7 @@ export default function FAQ() {
   };
 
   return (
-    <section className="relative py-16 sm:py-24 overflow-hidden z-10">
+    <section className="relative py-12 sm:py-16 overflow-hidden z-10">
       {/* Background glow */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         <div className="absolute top-[20%] right-[-10%] w-[400px] h-[400px] rounded-full bg-altrix-indigo/5 blur-[120px]" />

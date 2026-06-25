@@ -96,7 +96,7 @@ export default function Testimonials() {
               <span className="text-gradient-cyan">Built for Growth.</span>
             </h2>
             <p className="text-base sm:text-lg text-white/55 leading-relaxed">
-              Read how Altrix helps founders, brands, and local businesses elevate their digital identities.
+              Read how our websites help founders, brands, and local businesses elevate their digital identities.
             </p>
           </motion.div>
         </div>

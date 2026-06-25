@@ -46,7 +46,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="relative py-24 sm:py-32 overflow-hidden z-10">
+    <section id="contact" className="relative py-16 sm:py-24 overflow-hidden z-10">
       {/* Background ambient light */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         <div className="absolute bottom-[0%] left-[5%] w-[450px] h-[450px] rounded-full bg-altrix-cyan/5 blur-[120px]" />

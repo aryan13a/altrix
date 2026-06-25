@@ -76,7 +76,7 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="relative py-24 sm:py-32 overflow-hidden z-10 bg-altrix-dark/30 border-b border-white/[0.02]">
+    <section className="relative py-16 sm:py-24 overflow-hidden z-10 bg-altrix-dark/30 border-b border-white/[0.02]">
       {/* Background glow */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         <div className="absolute bottom-[10%] left-[20%] w-[350px] h-[350px] rounded-full bg-altrix-indigo/5 blur-[100px]" />

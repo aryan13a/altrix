@@ -91,7 +91,7 @@ export default function Process() {
   };
 
   return (
-    <section id="process" className="relative py-24 sm:py-32 overflow-hidden z-10">
+    <section id="process" className="relative py-16 sm:py-24 overflow-hidden z-10">
       {/* Background glow */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-altrix-indigo/5 blur-[150px]" />

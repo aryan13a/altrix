@@ -7,7 +7,6 @@ import { Menu, X, ArrowRight } from "lucide-react";
 import { mobileMenuVariants, mobileMenuItemVariants } from "@/lib/animations";
 
 const navLinks = [
-  { name: "Work", href: "#work" },
   { name: "Services", href: "#services" },
   { name: "Process", href: "#process" },
   { name: "Pricing", href: "#pricing" },
@@ -47,11 +46,19 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 w-full glass-navbar ${
+        className={`fixed top-0 left-0 right-0 z-50 w-full glass-navbar flex flex-col ${
           isScrolled ? "glass-navbar-scrolled" : ""
         }`}
       >
-        <div className="mx-auto max-w-7xl px-6 h-20 flex items-center justify-between">
+        {/* Promotional Offer Banner */}
+        <div className="w-full bg-gradient-to-r from-altrix-indigo/90 via-altrix-violet/90 to-altrix-cyan/90 py-2 px-6 text-center shadow-[0_2px_15px_rgba(108,99,255,0.2)]">
+          <p className="text-[10px] sm:text-xs font-semibold text-white tracking-widest uppercase flex items-center justify-center gap-1.5 flex-wrap">
+            <span className="animate-pulse">🎁</span>
+            <span>Launch Offer: Complimentary Advanced SEO (Worth ₹15,000) FREE with every package!</span>
+          </p>
+        </div>
+
+        <div className="mx-auto max-w-7xl px-6 h-20 flex items-center justify-between w-full">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2 group">
             <span className="font-display font-extrabold text-2xl tracking-tight text-white transition-colors duration-300 group-hover:text-altrix-indigo">

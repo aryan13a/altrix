@@ -10,12 +10,13 @@ const packages = [
   {
     name: "Starter Website",
     price: "₹9,999",
+    originalPrice: "₹25,999",
     description: "Perfect for startups and local businesses getting online.",
     features: [
       "Up to 3 Pages",
       "Fully Responsive Design",
       "Contact Form Integration",
-      "Basic On-Page SEO",
+      "FREE Advanced SEO (Worth ₹15,000)",
       "1 Round of Revisions",
       "Delivered in 7 days",
     ],
@@ -23,13 +24,14 @@ const packages = [
     cta: "Get Started",
   },
   {
-    name: "Custom Business",
+    name: "Premium Website",
     price: "₹14,999",
-    description: "For businesses that need a serious online presence.",
+    originalPrice: "₹44,999",
+    description: "For businesses that need a serious, custom online presence.",
     features: [
       "Fully Custom Design (no templates)",
       "Up to 5 Pages",
-      "SEO Optimization",
+      "FREE Advanced SEO (Worth ₹15,000)",
       "Admin Dashboard (if required)",
       "CMS Integration (optional)",
       "2 Rounds of Revisions",
@@ -39,16 +41,17 @@ const packages = [
     cta: "Get Started",
   },
   {
-    name: "Payment Integrated",
-    price: "₹19,999",
-    description: "For businesses ready to transact and scale online.",
+    name: "Full-Fledged E-Commerce",
+    price: "₹25,999",
+    originalPrice: "₹124,999",
+    description: "For businesses ready to transact and sell online at scale.",
     features: [
-      "Everything in Custom Package",
+      "Custom E-Commerce Storefront",
       "Payment Gateway (Razorpay/Stripe)",
       "User Authentication System",
-      "Database Integration",
-      "Priority Support",
-      "3 Rounds of Revisions",
+      "Database & CMS Integration",
+      "FREE Advanced SEO (Worth ₹15,000)",
+      "Priority Support & 3 Rounds",
     ],
     popular: false,
     cta: "Get Started",
@@ -117,13 +120,20 @@ export default function Pricing() {
                 </p>
 
                 {/* Price */}
-                <div className="flex items-baseline mb-8">
-                  <span className="font-display font-extrabold text-4xl sm:text-5xl text-white">
-                    {pkg.price}
-                  </span>
-                  <span className="text-sm text-white/40 ml-2 font-mono">
-                    / fixed
-                  </span>
+                <div className="mb-8">
+                  {pkg.originalPrice && (
+                    <div className="text-sm text-white/40 line-through mb-1 font-mono">
+                      {pkg.originalPrice}
+                    </div>
+                  )}
+                  <div className="flex items-baseline">
+                    <span className="font-display font-extrabold text-4xl sm:text-5xl text-white">
+                      {pkg.price}
+                    </span>
+                    <span className="text-sm text-white/40 ml-2 font-mono">
+                      / fixed
+                    </span>
+                  </div>
                 </div>
 
                 {/* Divider */}
@@ -153,6 +163,72 @@ export default function Pricing() {
               </Link>
             </motion.div>
           ))}
+        </motion.div>
+
+        {/* AI Automation Service Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mt-20 max-w-5xl mx-auto rounded-3xl p-8 sm:p-12 relative overflow-hidden bg-gradient-to-br from-altrix-indigo/20 via-altrix-violet/10 to-altrix-cyan/5 border border-altrix-indigo/35 shadow-[0_0_50px_rgba(108,99,255,0.1)]"
+        >
+          {/* Ambient Glow */}
+          <div className="absolute -top-24 -right-24 w-[300px] h-[300px] rounded-full bg-altrix-cyan/10 blur-[80px]" />
+          <div className="absolute -bottom-24 -left-24 w-[300px] h-[300px] rounded-full bg-altrix-indigo/10 blur-[80px]" />
+
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div className="lg:col-span-7">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-altrix-cyan/15 border border-altrix-cyan/35 text-altrix-cyan uppercase tracking-wider mb-6">
+                Standalone Automation Service
+              </span>
+              <h3 className="font-display font-extrabold text-3xl sm:text-4xl text-white mb-4 leading-tight">
+                AI Chatbot & <br />
+                <span className="text-gradient">AI Agent Integration</span>
+              </h3>
+              <p className="text-white/60 text-sm sm:text-base leading-relaxed mb-6">
+                Automate your customer support, lead generation, and business operations. We build custom-trained AI chatbots and autonomous agents tailored to your business data and connected directly to your WhatsApp, Telegram, or website.
+              </p>
+              
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <li className="flex items-center text-sm text-white/70">
+                  <Check className="w-4 h-4 text-altrix-cyan mr-3 flex-shrink-0" />
+                  <span>WhatsApp & Telegram Support</span>
+                </li>
+                <li className="flex items-center text-sm text-white/70">
+                  <Check className="w-4 h-4 text-altrix-cyan mr-3 flex-shrink-0" />
+                  <span>Website Custom Floating Widget</span>
+                </li>
+                <li className="flex items-center text-sm text-white/70">
+                  <Check className="w-4 h-4 text-altrix-cyan mr-3 flex-shrink-0" />
+                  <span>Trained on Your Custom Data</span>
+                </li>
+                <li className="flex items-center text-sm text-white/70">
+                  <Check className="w-4 h-4 text-altrix-cyan mr-3 flex-shrink-0" />
+                  <span>CRM & Google Sheets Integration</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="lg:col-span-5 flex flex-col items-center lg:items-end justify-center">
+              <div className="p-8 rounded-2xl bg-black/40 border border-white/5 w-full text-center lg:text-right max-w-sm">
+                <span className="text-xs text-white/45 uppercase tracking-widest block mb-2">Starting at</span>
+                <div className="flex items-baseline justify-center lg:justify-end mb-4">
+                  <span className="font-display font-extrabold text-4xl sm:text-5xl text-white">₹12,499</span>
+                  <span className="text-xs text-white/40 ml-2 font-mono">/ setup</span>
+                </div>
+                <p className="text-xs text-white/50 mb-6 leading-relaxed">
+                  Price varies based on API integrations and agent complexity.
+                </p>
+                <Link
+                  href="#contact"
+                  className="inline-flex w-full items-center justify-center py-3 px-6 rounded-full bg-altrix-indigo text-white hover:bg-altrix-indigo/90 shadow-[0_0_20px_rgba(108,99,255,0.3)] text-sm font-bold transition-all duration-300 hover:scale-102"
+                >
+                  Configure AI Agent
+                </Link>
+              </div>
+            </div>
+          </div>
         </motion.div>
 
         {/* Not Sure Footer Link */}

@@ -207,10 +207,10 @@ export default function Hero() {
             className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto"
           >
             <Link
-              href="#work"
+              href="#pricing"
               className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-altrix-indigo text-base font-semibold text-white transition-all duration-300 hover:scale-102 hover:shadow-[0_0_25px_rgba(108,99,255,0.4)] relative overflow-hidden group"
             >
-              <span className="relative z-10">View Our Work</span>
+              <span className="relative z-10">View Offers & Pricing</span>
               <span className="absolute inset-0 bg-gradient-to-r from-altrix-indigo to-altrix-violet opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </Link>
             

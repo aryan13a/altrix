@@ -62,7 +62,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2 group">
             <span className="font-display font-extrabold text-2xl tracking-tight text-white transition-colors duration-300 group-hover:text-altrix-indigo">
-              ALTRIX
+              WEBIO
             </span>
             <span className="w-1.5 h-1.5 rounded-full bg-altrix-cyan animate-pulse"></span>
           </Link>

@@ -148,7 +148,7 @@ export default function Hero() {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-[100dvh] w-full flex items-center justify-center overflow-hidden bg-altrix-dark pt-20"
+      className="relative min-h-[100dvh] w-full flex items-center justify-center overflow-hidden bg-altrix-dark pt-32 md:pt-36"
     >
       {/* 3D Particle Canvas */}
       <canvas

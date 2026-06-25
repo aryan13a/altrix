@@ -16,20 +16,20 @@ const syne = Syne({
 });
 
 export const metadata: Metadata = {
-  title: "Altrix — Premium Web Development Agency | Jaipur, India",
-  description: "Altrix builds fast, beautiful, and scalable websites for businesses. From business websites to custom web apps — we craft digital experiences that drive growth.",
-  metadataBase: new URL("https://altrix.agency"),
+  title: "Webio — Premium Web Development Agency | Jaipur, India",
+  description: "Webio builds fast, beautiful, and scalable websites for businesses. From business websites to custom web apps — we craft digital experiences that drive growth.",
+  metadataBase: new URL("https://webio.agency"),
   openGraph: {
-    title: "Altrix — Premium Web Development Agency",
-    description: "Altrix builds fast, beautiful, and scalable websites for businesses. From business websites to custom web apps — we craft digital experiences that drive growth.",
-    url: "https://altrix.agency",
-    siteName: "Altrix",
+    title: "Webio — Premium Web Development Agency",
+    description: "Webio builds fast, beautiful, and scalable websites for businesses. From business websites to custom web apps — we craft digital experiences that drive growth.",
+    url: "https://webio.agency",
+    siteName: "Webio",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Altrix Web Development Agency",
+        alt: "Webio Web Development Agency",
       },
     ],
     locale: "en_IN",
@@ -37,8 +37,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Altrix — Premium Web Development Agency",
-    description: "Altrix builds fast, beautiful, and scalable websites for businesses.",
+    title: "Webio — Premium Web Development Agency",
+    description: "Webio builds fast, beautiful, and scalable websites for businesses.",
     images: ["/og-image.png"],
   },
   icons: {
@@ -60,10 +60,10 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
-              "name": "Altrix",
-              "image": "https://altrix.agency/og-image.png",
-              "@id": "https://altrix.agency/#localbusiness",
-              "url": "https://altrix.agency",
+              "name": "Webio",
+              "image": "https://webio.agency/og-image.png",
+              "@id": "https://webio.agency/#localbusiness",
+              "url": "https://webio.agency",
               "telephone": "+918000000000",
               "priceRange": "₹₹",
               "address": {

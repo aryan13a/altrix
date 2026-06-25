@@ -25,13 +25,13 @@ export default function Footer() {
           <div className="lg:col-span-5 flex flex-col space-y-6">
             <Link href="/" className="flex items-center space-x-2 w-max">
               <span className="font-display font-extrabold text-2xl tracking-tight text-white hover:text-altrix-indigo transition-colors duration-300">
-                ALTRIX
+                WEBIO
               </span>
               <span className="w-1.5 h-1.5 rounded-full bg-altrix-cyan"></span>
             </Link>
             
             <p className="text-sm text-white/55 leading-relaxed max-w-sm">
-              Altrix crafts dark-first, cinematic, and high-performance digital
+              Webio crafts dark-first, cinematic, and high-performance digital
               experiences that capture visitors and accelerate brand growth.
             </p>
 
@@ -169,7 +169,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-white/30 font-mono text-center sm:text-left">
-            © {currentYear} Altrix. All Rights Reserved. · Built with precision in Jaipur, India.
+            © {currentYear} Webio. All Rights Reserved. · Built with precision in Jaipur, India.
           </p>
           <button
             onClick={handleScrollToTop}

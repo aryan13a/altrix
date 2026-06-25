@@ -60,7 +60,7 @@ const packages = [
 
 export default function Pricing() {
   return (
-    <section id="pricing" className="relative py-16 sm:py-24 overflow-hidden z-10">
+    <section id="pricing" className="relative py-12 sm:py-16 overflow-hidden z-10">
       {/* Background ambient light */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         <div className="absolute top-[40%] left-[50%] -translate-x-1/2 w-[500px] h-[500px] rounded-full bg-altrix-indigo/5 blur-[120px]" />
@@ -97,10 +97,12 @@ export default function Pricing() {
             <motion.div
               key={idx}
               variants={fadeInUp}
-              className={`rounded-3xl p-8 flex flex-col justify-between relative ${
-                pkg.popular
-                  ? "bg-[#0d0d1a] border-2 border-altrix-indigo shadow-[0_0_50px_rgba(108,99,255,0.25)] md:scale-105 z-10"
-                  : "glass-card"
+              className={`rounded-3xl p-8 flex flex-col justify-between relative transition-all duration-300 ${
+                idx === 1
+                  ? "bg-gradient-to-br from-altrix-indigo/25 via-altrix-violet/15 to-altrix-cyan/10 border-2 border-altrix-indigo/60 shadow-[0_0_50px_rgba(108,99,255,0.25)] md:scale-105 z-10 hover:border-altrix-indigo/80 hover:shadow-[0_0_60px_rgba(108,99,255,0.35)]"
+                  : idx === 0
+                  ? "bg-gradient-to-br from-altrix-indigo/15 via-white/[0.01] to-white/[0.01] border border-altrix-indigo/30 shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:border-altrix-indigo/55 hover:shadow-[0_0_30px_rgba(108,99,255,0.15)]"
+                  : "bg-gradient-to-br from-altrix-cyan/15 via-white/[0.01] to-white/[0.01] border border-altrix-cyan/30 shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:border-altrix-cyan/55 hover:shadow-[0_0_30px_rgba(6,182,212,0.15)]"
               }`}
             >
               {/* Popular Badge */}
@@ -121,19 +123,19 @@ export default function Pricing() {
 
                 {/* Price */}
                 <div className="mb-8">
-                  {pkg.originalPrice && (
-                    <div className="text-sm text-white/40 line-through mb-1 font-mono">
-                      {pkg.originalPrice}
-                    </div>
-                  )}
-                  <div className="flex flex-wrap items-baseline gap-x-2">
-                    <span className="font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl text-white">
+                  <div className="flex items-center gap-2 mb-1 flex-wrap">
+                    <span className="font-display font-extrabold text-3xl sm:text-4xl text-white tracking-tight">
                       {pkg.price}
                     </span>
-                    <span className="text-xs text-white/40 font-mono">
-                      / fixed
-                    </span>
+                    {pkg.originalPrice && (
+                      <span className="text-xs sm:text-sm text-white/40 line-through font-mono">
+                        {pkg.originalPrice}
+                      </span>
+                    )}
                   </div>
+                  <span className="text-[10px] sm:text-xs text-white/40 font-mono block">
+                    / fixed price
+                  </span>
                 </div>
 
                 {/* Divider */}

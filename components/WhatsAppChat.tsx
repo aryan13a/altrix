@@ -7,7 +7,7 @@ import { X } from "lucide-react";
 export default function WhatsAppChat() {
   const [showTooltip, setShowTooltip] = useState(false);
   const phoneNumber = "918000000000"; // Default contact phone number from the footer
-  const message = "Hi Altrix, I am interested in building a website / integrating AI automation and would like to know more about the offers.";
+  const message = "Hi Webio, I am interested in building a website / integrating AI automation and would like to know more about the offers.";
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
   useEffect(() => {

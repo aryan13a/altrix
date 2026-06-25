@@ -25,7 +25,7 @@ export default function Hero() {
       0.1,
       100
     );
-    camera.position.z = 30;
+    camera.position.z = 25;
 
     const renderer = new THREE.WebGLRenderer({
       canvas,
@@ -35,25 +35,41 @@ export default function Hero() {
     renderer.setSize(container.clientWidth, container.clientHeight);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-    // Particles
-    const particleCount = 2000;
-    const geometry = new THREE.BufferGeometry();
-    const positions = new Float32Array(particleCount * 3);
+    // Particle nodes configuration
+    const particleCount = 90;
+    const maxDistance = 6.5;
+    const maxConnections = 600;
+    const particlesData: { pos: THREE.Vector3; vel: THREE.Vector3 }[] = [];
 
-    for (let i = 0; i < particleCount * 3; i += 3) {
-      // Create a sphere or box distribution
-      const r = 35 + Math.random() * 20;
-      const theta = Math.random() * Math.PI * 2;
-      const phi = Math.acos(Math.random() * 2 - 1);
+    const pointsGeometry = new THREE.BufferGeometry();
+    const pointsPositions = new Float32Array(particleCount * 3);
 
-      positions[i] = r * Math.sin(phi) * Math.cos(theta);
-      positions[i + 1] = r * Math.sin(phi) * Math.sin(theta);
-      positions[i + 2] = r * Math.cos(phi) - 10;
+    for (let i = 0; i < particleCount; i++) {
+      // Bounded distribution inside canvas viewport
+      const x = (Math.random() - 0.5) * 45;
+      const y = (Math.random() - 0.5) * 30;
+      const z = (Math.random() - 0.5) * 15;
+
+      pointsPositions[i * 3] = x;
+      pointsPositions[i * 3 + 1] = y;
+      pointsPositions[i * 3 + 2] = z;
+
+      particlesData.push({
+        pos: new THREE.Vector3(x, y, z),
+        vel: new THREE.Vector3(
+          (Math.random() - 0.5) * 0.025,
+          (Math.random() - 0.5) * 0.025,
+          (Math.random() - 0.5) * 0.015
+        ),
+      });
     }
 
-    geometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
+    pointsGeometry.setAttribute(
+      "position",
+      new THREE.BufferAttribute(pointsPositions, 3)
+    );
 
-    // Particle texture
+    // Node texture (soft glow circle)
     const canvasTexture = document.createElement("canvas");
     canvasTexture.width = 16;
     canvasTexture.height = 16;
@@ -61,62 +77,186 @@ export default function Hero() {
     if (ctx) {
       const gradient = ctx.createRadialGradient(8, 8, 0, 8, 8, 8);
       gradient.addColorStop(0, "rgba(255,255,255,1)");
-      gradient.addColorStop(1, "rgba(255,255,255,0)");
+      gradient.addColorStop(0.4, "rgba(6,182,212,0.8)"); // Cyan center
+      gradient.addColorStop(1, "rgba(0,0,0,0)");
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, 16, 16);
     }
     const texture = new THREE.CanvasTexture(canvasTexture);
 
-    const material = new THREE.PointsMaterial({
-      size: 0.25,
+    const pointsMaterial = new THREE.PointsMaterial({
+      size: 0.65,
       map: texture,
       transparent: true,
       blending: THREE.AdditiveBlending,
       depthWrite: false,
-      color: 0x6c63ff,
+      color: 0x06b6d4, // Theme cyan
     });
 
-    const particles = new THREE.Points(geometry, material);
-    scene.add(particles);
+    const pointCloud = new THREE.Points(pointsGeometry, pointsMaterial);
+    scene.add(pointCloud);
 
-    // Mouse interaction variables
-    let mouseX = 0;
-    let mouseY = 0;
-    let targetMouseX = 0;
-    let targetMouseY = 0;
+    // Interconnecting Lines Setup
+    const lineGeometry = new THREE.BufferGeometry();
+    const linePositions = new Float32Array(maxConnections * 2 * 3);
+    const lineColors = new Float32Array(maxConnections * 2 * 3);
+
+    lineGeometry.setAttribute(
+      "position",
+      new THREE.BufferAttribute(linePositions, 3)
+    );
+    lineGeometry.setAttribute(
+      "color",
+      new THREE.BufferAttribute(lineColors, 3)
+    );
+
+    const lineMaterial = new THREE.LineBasicMaterial({
+      vertexColors: true,
+      transparent: true,
+      opacity: 0.28,
+      blending: THREE.AdditiveBlending,
+    });
+
+    const linesMesh = new THREE.LineSegments(lineGeometry, lineMaterial);
+    scene.add(linesMesh);
+
+    // Cursor attraction target in 3D
+    const mouse = new THREE.Vector3(999, 999, 0);
 
     const handleMouseMove = (event: MouseEvent) => {
-      targetMouseX = (event.clientX - window.innerWidth / 2) / 100;
-      targetMouseY = (event.clientY - window.innerHeight / 2) / 100;
+      const rect = container.getBoundingClientRect();
+      const x = ((event.clientX - rect.left) / container.clientWidth) * 2 - 1;
+      const y = -((event.clientY - rect.top) / container.clientHeight) * 2 + 1;
+      
+      // Scale projection to match viewport coordinate system
+      mouse.set(x * 24, y * 16, 0);
     };
 
-    window.addEventListener("mousemove", handleMouseMove);
+    const handleMouseLeave = () => {
+      mouse.set(999, 999, 0);
+    };
+
+    container.parentElement?.addEventListener("mousemove", handleMouseMove);
+    container.parentElement?.addEventListener("mouseleave", handleMouseLeave);
 
     // Animation loop
     let animationFrameId: number;
-    const clock = new THREE.Clock();
 
     const animate = () => {
-      const elapsedTime = clock.getElapsedTime();
+      let vertexIdx = 0;
+      let colorIdx = 0;
+      let lineCount = 0;
 
-      // Smooth mouse interpolation
-      mouseX += (targetMouseX - mouseX) * 0.05;
-      mouseY += (targetMouseY - mouseY) * 0.05;
+      const pointsPosAttr = pointsGeometry.attributes.position as THREE.BufferAttribute;
+      const pointsArray = pointsPosAttr.array as Float32Array;
 
-      // Slow drift & mouse response
-      particles.rotation.y = elapsedTime * 0.02 + mouseX * 0.05;
-      particles.rotation.x = elapsedTime * 0.01 + mouseY * 0.05;
-
-      // Wave-like motion on particles
-      const posAttr = geometry.attributes.position as THREE.BufferAttribute;
-      const posArray = posAttr.array as Float32Array;
+      // Update node positions
       for (let i = 0; i < particleCount; i++) {
-        const i3 = i * 3;
-        const x = posArray[i3];
-        // Apply slight offset based on sine wave
-        posArray[i3 + 2] += Math.sin(elapsedTime + x * 0.1) * 0.005;
+        const p = particlesData[i];
+        
+        // Ambient movement
+        p.pos.add(p.vel);
+
+        // Boundary constraints
+        if (p.pos.x < -24 || p.pos.x > 24) p.vel.x *= -1;
+        if (p.pos.y < -18 || p.pos.y > 18) p.vel.y *= -1;
+        if (p.pos.z < -12 || p.pos.z > 12) p.vel.z *= -1;
+
+        // Magnet attraction to cursor hover
+        if (mouse.x !== 999) {
+          const distToMouse = p.pos.distanceTo(mouse);
+          if (distToMouse < 10) {
+            const pullStrength = (1.0 - distToMouse / 10) * 0.015;
+            const pull = new THREE.Vector3().subVectors(mouse, p.pos).multiplyScalar(pullStrength);
+            p.pos.add(pull);
+          }
+        }
+
+        pointsArray[i * 3] = p.pos.x;
+        pointsArray[i * 3 + 1] = p.pos.y;
+        pointsArray[i * 3 + 2] = p.pos.z;
       }
-      posAttr.needsUpdate = true;
+      pointsPosAttr.needsUpdate = true;
+
+      // Draw interconnecting web mesh lines
+      const linePosAttr = lineGeometry.attributes.position as THREE.BufferAttribute;
+      const linePosArray = linePosAttr.array as Float32Array;
+      const lineColAttr = lineGeometry.attributes.color as THREE.BufferAttribute;
+      const lineColArray = lineColAttr.array as Float32Array;
+
+      for (let i = 0; i < particleCount; i++) {
+        const p1 = particlesData[i];
+
+        // Draw dynamic connection to the mouse pointer
+        if (mouse.x !== 999) {
+          const distToMouse = p1.pos.distanceTo(mouse);
+          if (distToMouse < maxDistance && lineCount < maxConnections) {
+            const alpha = 1.0 - distToMouse / maxDistance;
+
+            linePosArray[vertexIdx++] = p1.pos.x;
+            linePosArray[vertexIdx++] = p1.pos.y;
+            linePosArray[vertexIdx++] = p1.pos.z;
+
+            linePosArray[vertexIdx++] = mouse.x;
+            linePosArray[vertexIdx++] = mouse.y;
+            linePosArray[vertexIdx++] = mouse.z;
+
+            // Indigo to Cyan color gradient connection
+            lineColArray[colorIdx++] = 0.42 * alpha; // R
+            lineColArray[colorIdx++] = 0.38 * alpha; // G
+            lineColArray[colorIdx++] = 1.0 * alpha;  // B
+
+            lineColArray[colorIdx++] = 0.02 * alpha; // R
+            lineColArray[colorIdx++] = 0.71 * alpha; // G
+            lineColArray[colorIdx++] = 0.83 * alpha; // B
+
+            lineCount++;
+          }
+        }
+
+        // Draw connections between nodes
+        for (let j = i + 1; j < particleCount; j++) {
+          const p2 = particlesData[j];
+          const dist = p1.pos.distanceTo(p2.pos);
+
+          if (dist < maxDistance && lineCount < maxConnections) {
+            const alpha = 1.0 - dist / maxDistance;
+
+            linePosArray[vertexIdx++] = p1.pos.x;
+            linePosArray[vertexIdx++] = p1.pos.y;
+            linePosArray[vertexIdx++] = p1.pos.z;
+
+            linePosArray[vertexIdx++] = p2.pos.x;
+            linePosArray[vertexIdx++] = p2.pos.y;
+            linePosArray[vertexIdx++] = p2.pos.z;
+
+            // Gradient line coloration based on nodes
+            const r = 0.22 * alpha;
+            const g = 0.51 * alpha;
+            const b = 0.90 * alpha;
+
+            lineColArray[colorIdx++] = r;
+            lineColArray[colorIdx++] = g;
+            lineColArray[colorIdx++] = b;
+
+            lineColArray[colorIdx++] = r;
+            lineColArray[colorIdx++] = g;
+            lineColArray[colorIdx++] = b;
+
+            lineCount++;
+          }
+        }
+      }
+
+      lineGeometry.setDrawRange(0, lineCount * 2);
+      linePosAttr.needsUpdate = true;
+      lineColAttr.needsUpdate = true;
+
+      // Slow ambient drift
+      pointCloud.rotation.y += 0.0006;
+      pointCloud.rotation.x += 0.0003;
+      linesMesh.rotation.y += 0.0006;
+      linesMesh.rotation.x += 0.0003;
 
       renderer.render(scene, camera);
       animationFrameId = requestAnimationFrame(animate);
@@ -135,12 +275,15 @@ export default function Hero() {
     window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
+      container.parentElement?.removeEventListener("mousemove", handleMouseMove);
+      container.parentElement?.removeEventListener("mouseleave", handleMouseLeave);
       window.removeEventListener("resize", handleResize);
       cancelAnimationFrame(animationFrameId);
-      geometry.dispose();
-      material.dispose();
+      pointsGeometry.dispose();
+      pointsMaterial.dispose();
       texture.dispose();
+      lineGeometry.dispose();
+      lineMaterial.dispose();
       renderer.dispose();
     };
   }, []);
@@ -197,7 +340,7 @@ export default function Hero() {
             variants={fadeInUp}
             className="mb-10 text-base sm:text-lg text-white/55 max-w-[560px] leading-relaxed"
           >
-            From business websites to custom web applications — Altrix creates fast,
+            From business websites to custom web applications — Webio creates fast,
             beautiful, and scalable digital experiences that help brands grow online.
           </motion.p>
 

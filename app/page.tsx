@@ -4,12 +4,12 @@ import SocialProofBar from "@/components/SocialProofBar";
 import Capabilities from "@/components/Capabilities";
 import WhyAltrix from "@/components/WhyAltrix";
 import Process from "@/components/Process";
-import Portfolio from "@/components/Portfolio";
 import Pricing from "@/components/Pricing";
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import WhatsAppChat from "@/components/WhatsAppChat";
 
 export default function Home() {
   return (
@@ -26,13 +26,14 @@ export default function Home() {
         <Capabilities />
         <WhyAltrix />
         <Process />
-        <Portfolio />
         <Pricing />
         <Testimonials />
         <FAQ />
         <Contact />
       </main>
       <Footer />
+      <WhatsAppChat />
     </>
   );
 }
+

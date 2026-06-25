@@ -96,11 +96,6 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2">
               <li>
-                <Link href="#work" className="text-sm text-white/55 hover:text-white transition-colors">
-                  Work
-                </Link>
-              </li>
-              <li>
                 <Link href="#services" className="text-sm text-white/55 hover:text-white transition-colors">
                   Services
                 </Link>

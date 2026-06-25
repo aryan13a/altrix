@@ -82,7 +82,7 @@ function StatCounter({ value }: { value: string }) {
 
 export default function WhyAltrix() {
   return (
-    <section className="relative py-24 sm:py-32 overflow-hidden z-10 bg-altrix-dark/20 border-y border-white/[0.02]">
+    <section className="relative py-16 sm:py-24 overflow-hidden z-10 bg-altrix-dark/20 border-y border-white/[0.02]">
       {/* Background Ambient glows */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         <div className="absolute top-[30%] left-[5%] w-[400px] h-[400px] rounded-full bg-altrix-indigo/5 blur-[120px]" />

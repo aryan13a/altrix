@@ -60,7 +60,7 @@ const packages = [
 
 export default function Pricing() {
   return (
-    <section id="pricing" className="relative py-24 sm:py-32 overflow-hidden z-10">
+    <section id="pricing" className="relative py-16 sm:py-24 overflow-hidden z-10">
       {/* Background ambient light */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         <div className="absolute top-[40%] left-[50%] -translate-x-1/2 w-[500px] h-[500px] rounded-full bg-altrix-indigo/5 blur-[120px]" />
@@ -99,8 +99,8 @@ export default function Pricing() {
               variants={fadeInUp}
               className={`rounded-3xl p-8 flex flex-col justify-between relative ${
                 pkg.popular
-                  ? "bg-altrix-dark border-2 border-altrix-indigo shadow-[0_0_40px_rgba(108,99,255,0.15)] md:scale-105 z-10"
-                  : "glass-card border border-white/5 bg-white/[0.01]"
+                  ? "bg-[#0d0d1a] border-2 border-altrix-indigo shadow-[0_0_50px_rgba(108,99,255,0.25)] md:scale-105 z-10"
+                  : "glass-card"
               }`}
             >
               {/* Popular Badge */}
@@ -126,11 +126,11 @@ export default function Pricing() {
                       {pkg.originalPrice}
                     </div>
                   )}
-                  <div className="flex items-baseline">
-                    <span className="font-display font-extrabold text-4xl sm:text-5xl text-white">
+                  <div className="flex flex-wrap items-baseline gap-x-2">
+                    <span className="font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl text-white">
                       {pkg.price}
                     </span>
-                    <span className="text-sm text-white/40 ml-2 font-mono">
+                    <span className="text-xs text-white/40 font-mono">
                       / fixed
                     </span>
                   </div>

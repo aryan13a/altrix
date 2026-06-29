@@ -91,10 +91,7 @@ export default function RootLayout({
                 ],
                 "opens": "09:00",
                 "closes": "21:00"
-              },
-              "sameAs": [
-                "https://github.com/aryan13a"
-              ]
+              }
             })
           }}
         />

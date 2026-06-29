@@ -8,22 +8,22 @@ import { fadeInUp, staggerContainer } from "@/lib/animations";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[90vh] md:min-h-[100vh] w-full flex items-center overflow-hidden bg-altrix-dark pt-32 pb-16 md:py-0">
+    <section className="relative min-h-[90vh] md:min-h-[100vh] w-full flex items-center overflow-hidden bg-altrix-dark pt-44 pb-24 md:pt-40 md:pb-20">
       {/* Background Video */}
-      <div className="absolute inset-0 w-full h-full overflow-hidden bg-altrix-dark pointer-events-none z-0">
+      <div className="absolute inset-0 md:left-auto md:right-0 md:w-[58%] w-full h-full overflow-hidden bg-altrix-dark pointer-events-none z-0">
         <video
           autoPlay
           muted
           loop
           playsInline
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover object-center"
         >
           <source src="/hero-video.mp4" type="video/mp4" />
         </video>
-        {/* Subtle left-side dark gradient overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-altrix-dark via-altrix-dark/75 to-transparent z-10" />
-        {/* Mobile-only overlay layer to ensure contrast on small vertical screens */}
-        <div className="absolute inset-0 bg-altrix-dark/25 md:hidden z-10" />
+        {/* Desktop-only gradient overlay: fades smoothly from the dark background of the page (left) into the video (right) */}
+        <div className="absolute inset-0 bg-gradient-to-r from-altrix-dark via-altrix-dark/50 to-transparent z-10 hidden md:block" />
+        {/* Mobile-only overlay: overall dark overlay (60%) to ensure high contrast and readability */}
+        <div className="absolute inset-0 bg-altrix-dark/60 md:hidden z-10" />
       </div>
 
       {/* Content Container */}
@@ -37,7 +37,7 @@ export default function Hero() {
           {/* Main Headline */}
           <motion.h1
             variants={fadeInUp}
-            className="mb-6 font-display font-extrabold text-4xl sm:text-6xl md:text-7xl tracking-tight leading-[1.05] text-white"
+            className="mb-4 sm:mb-6 font-display font-extrabold text-3xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight leading-[1.05] text-white"
           >
             Premium Websites.<br />
             <span className="text-gradient-cyan">Powerful Results.</span>
@@ -46,7 +46,7 @@ export default function Hero() {
           {/* Description */}
           <motion.p
             variants={fadeInUp}
-            className="mb-8 text-base sm:text-lg text-white/55 max-w-[620px] leading-relaxed"
+            className="mb-6 sm:mb-8 text-base sm:text-lg text-white/55 max-w-[620px] leading-relaxed"
           >
             We design fast, modern and conversion-focused websites that help Indian businesses build trust, attract customers and grow online.
           </motion.p>
@@ -54,7 +54,7 @@ export default function Hero() {
           {/* Offer Card */}
           <motion.div
             variants={fadeInUp}
-            className="mb-8 p-5 rounded-2xl bg-gradient-to-br from-altrix-indigo/15 via-white/[0.01] to-white/[0.01] border border-altrix-indigo/30 shadow-[0_8px_32px_rgba(0,0,0,0.4)] max-w-md w-full"
+            className="mb-6 sm:mb-8 p-5 rounded-2xl bg-gradient-to-br from-altrix-indigo/15 via-white/[0.01] to-white/[0.01] border border-altrix-indigo/30 shadow-[0_8px_32px_rgba(0,0,0,0.4)] max-w-md w-full"
           >
             <div className="font-sans font-bold text-white text-base sm:text-lg leading-snug">
               Premium Website at <span className="text-altrix-cyan">₹9,990</span> — <br />

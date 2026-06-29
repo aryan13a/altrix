@@ -10,13 +10,13 @@ export default function Hero() {
   return (
     <section className="relative min-h-[90vh] md:min-h-[100vh] w-full flex items-center overflow-hidden bg-altrix-dark pt-44 pb-24 md:pt-40 md:pb-20">
       {/* Background Video */}
-      <div className="absolute inset-0 md:left-auto md:right-[3%] md:w-[60%] w-full h-full overflow-hidden bg-altrix-dark pointer-events-none z-0">
+      <div className="absolute inset-0 md:left-auto md:right-0 md:w-[58%] w-full h-full overflow-hidden bg-altrix-dark pointer-events-none z-0">
         <video
           autoPlay
           muted
           loop
           playsInline
-          className="absolute inset-0 w-full h-full object-cover object-[44%_center]"
+          className="absolute inset-0 w-full h-full object-cover object-center scale-90"
         >
           <source src="/hero-video.mp4" type="video/mp4" />
         </video>

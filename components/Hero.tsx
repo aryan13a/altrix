@@ -10,13 +10,13 @@ export default function Hero() {
   return (
     <section className="relative min-h-[90vh] md:min-h-[100vh] w-full flex items-center overflow-hidden bg-altrix-dark pt-44 pb-24 md:pt-40 md:pb-20">
       {/* Background Video */}
-      <div className="absolute inset-0 md:left-auto md:right-0 md:w-[58%] w-full h-full overflow-hidden bg-altrix-dark pointer-events-none z-0">
+      <div className="absolute inset-0 md:left-auto md:right-[3%] md:w-[60%] w-full h-full overflow-hidden bg-altrix-dark pointer-events-none z-0">
         <video
           autoPlay
           muted
           loop
           playsInline
-          className="absolute inset-0 w-full h-full object-cover object-center"
+          className="absolute inset-0 w-full h-full object-cover object-[44%_center]"
         >
           <source src="/hero-video.mp4" type="video/mp4" />
         </video>
@@ -78,13 +78,15 @@ export default function Hero() {
               <span className="absolute inset-0 bg-gradient-to-r from-altrix-indigo to-altrix-violet opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </Link>
 
-            <Link
-              href="#services"
+            <a
+              href="https://wa.me/919351864351?text=Hi%20Webio%2C%20I%20want%20to%20claim%20the%20Premium%20Website%20offer%20at%20%E2%82%B99%2C990%20with%20free%20SEO%21"
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 rounded-full border border-white/20 hover:border-white/40 bg-white/0 hover:bg-white/5 text-base font-semibold text-white transition-all duration-300 group"
             >
-              View Our Work
+              Claim Offer
               <ArrowRight className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
-            </Link>
+            </a>
           </motion.div>
         </motion.div>
       </div>

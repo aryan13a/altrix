@@ -22,10 +22,24 @@ export default function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
 
+    const text = `Hi Webio, I would like to start a project.
+
+*Details:*
+- *Name:* ${formData.name}
+- *Business:* ${formData.business || "N/A"}
+- *Email:* ${formData.email}
+- *Phone:* ${formData.phone || "N/A"}
+- *Project Type:* ${formData.projectType}
+- *Budget:* ${formData.budget}
+- *Message:* ${formData.message}`;
+
+    const whatsappUrl = `https://wa.me/919351864351?text=${encodeURIComponent(text)}`;
+
     // Simulate API delay
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSuccess(true);
+      window.open(whatsappUrl, "_blank");
       setFormData({
         name: "",
         business: "",

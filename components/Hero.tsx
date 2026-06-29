@@ -3,7 +3,7 @@
 import React, { useEffect, useRef } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ChevronDown, ArrowRight } from "lucide-react";
+import { ChevronDown, ArrowRight, MessageCircle } from "lucide-react";
 import * as THREE from "three";
 import { fadeInUp, staggerContainer } from "@/lib/animations";
 
@@ -357,6 +357,16 @@ export default function Hero() {
               <span className="absolute inset-0 bg-gradient-to-r from-altrix-indigo to-altrix-violet opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </Link>
             
+            <a
+              href="https://wa.me/919351864351"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 rounded-full border border-emerald-500/30 hover:border-emerald-500/50 bg-emerald-500/10 hover:bg-emerald-500/20 text-base font-semibold text-white transition-all duration-300 group"
+            >
+              Chat on WhatsApp
+              <MessageCircle className="w-4 h-4 ml-2 text-emerald-400 transition-transform duration-300 group-hover:scale-110" />
+            </a>
+
             <Link
               href="#contact"
               className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 rounded-full border border-white/20 hover:border-white/40 bg-white/0 hover:bg-white/5 text-base font-semibold text-white transition-all duration-300 group"

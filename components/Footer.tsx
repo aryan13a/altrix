@@ -28,7 +28,7 @@ export default function Footer() {
             <Link href="/" className="flex items-center space-x-2 w-max group">
               <Image
                 src={logoImg}
-                alt="Webio Logo"
+                alt="Webio Logo - Affordable Website Design for Small Businesses"
                 width={160}
                 height={44}
                 className="h-11 w-auto object-contain transition-opacity duration-300 group-hover:opacity-90"

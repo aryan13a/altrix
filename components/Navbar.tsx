@@ -69,7 +69,7 @@ export default function Navbar() {
             <Logo3D />
             <Image
               src={logoImg}
-              alt="Webio Logo"
+              alt="Webio Logo - Premium Web Development Agency India"
               width={200}
               height={56}
               className="h-14 w-auto object-contain transition-opacity duration-300 group-hover:opacity-90"

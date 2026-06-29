@@ -64,7 +64,7 @@ export default function RootLayout({
               "image": "https://webio.agency/og-image.png",
               "@id": "https://webio.agency/#localbusiness",
               "url": "https://webio.agency",
-              "telephone": "+918000000000",
+              "telephone": "+919351864351",
               "priceRange": "₹₹",
               "address": {
                 "@type": "PostalAddress",

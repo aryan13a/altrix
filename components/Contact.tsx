@@ -262,7 +262,7 @@ export default function Contact() {
           <div className="lg:col-span-5 flex flex-col space-y-6">
             {/* WhatsApp CTA Card */}
             <a
-              href="https://wa.me/918000000000" // Placeholder phone number
+              href="https://wa.me/919351864351" // Contact phone number
               target="_blank"
               rel="noopener noreferrer"
               className="p-6 rounded-3xl bg-gradient-to-br from-green-500/10 to-transparent border border-green-500/20 hover:border-green-500/40 hover:bg-green-500/15 transition-all duration-300 group flex items-start space-x-5"

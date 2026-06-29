@@ -9,7 +9,7 @@ import { fadeInUp, staggerContainer } from "@/lib/animations";
 const packages = [
   {
     name: "Starter Website",
-    price: "₹9,999",
+    price: "₹9,990",
     description: "Perfect for startups and local businesses getting online.",
     features: [
       "Up to 3 Pages",
@@ -24,7 +24,7 @@ const packages = [
   },
   {
     name: "Premium Website",
-    price: "₹14,999",
+    price: "₹14,990",
     description: "For businesses that need a serious, custom online presence.",
     features: [
       "Fully Custom Design (no templates)",
@@ -40,7 +40,7 @@ const packages = [
   },
   {
     name: "Full-Fledged E-Commerce",
-    price: "₹25,999",
+    price: "₹19,990",
     description: "For businesses ready to transact and sell online at scale.",
     features: [
       "Custom E-Commerce Storefront",
@@ -208,7 +208,7 @@ export default function Pricing() {
               <div className="p-8 rounded-2xl bg-black/40 border border-white/5 w-full text-center lg:text-right max-w-sm">
                 <span className="text-xs text-white/45 uppercase tracking-widest block mb-2">Starting at</span>
                 <div className="flex items-baseline justify-center lg:justify-end mb-4">
-                  <span className="font-display font-extrabold text-4xl sm:text-5xl text-white">₹12,499</span>
+                  <span className="font-display font-extrabold text-4xl sm:text-5xl text-white">₹12,490</span>
                   <span className="text-xs text-white/40 ml-2 font-mono">/ setup</span>
                 </div>
                 <p className="text-xs text-white/50 mb-6 leading-relaxed">

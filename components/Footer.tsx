@@ -29,9 +29,9 @@ export default function Footer() {
               <Image
                 src={logoImg}
                 alt="Webio Logo"
-                width={120}
-                height={32}
-                className="h-8 w-auto object-contain transition-opacity duration-300 group-hover:opacity-90"
+                width={160}
+                height={44}
+                className="h-11 w-auto object-contain transition-opacity duration-300 group-hover:opacity-90"
               />
             </Link>
             

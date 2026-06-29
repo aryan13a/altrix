@@ -66,9 +66,9 @@ export default function Navbar() {
             <Image
               src={logoImg}
               alt="Webio Logo"
-              width={130}
-              height={36}
-              className="h-9 w-auto object-contain transition-opacity duration-300 group-hover:opacity-90"
+              width={200}
+              height={56}
+              className="h-14 w-auto object-contain transition-opacity duration-300 group-hover:opacity-90"
               priority
             />
           </Link>

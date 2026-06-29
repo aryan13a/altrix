@@ -329,10 +329,10 @@ export default function Hero() {
           {/* Main Headline */}
           <motion.h1
             variants={fadeInUp}
-            className="mb-6 font-display font-extrabold text-4xl sm:text-6xl md:text-8xl tracking-tight leading-[1.05] text-white"
+            className="mb-6 font-display font-extrabold text-3xl sm:text-5xl md:text-7xl tracking-tight leading-[1.05] text-white"
           >
-            We Build Websites <br />
-            <span className="text-gradient-cyan">That Turn Visitors <br className="hidden sm:inline" /> Into Customers.</span>
+            Premium Website at ₹9,990 — <br />
+            <span className="text-gradient-cyan">Free SEO Included. <br className="hidden sm:inline" /> Built for Indian Businesses.</span>
           </motion.h1>
 
           {/* Subheading */}

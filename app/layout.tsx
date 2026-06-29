@@ -18,11 +18,11 @@ const syne = Syne({
 export const metadata: Metadata = {
   title: "Webio — Premium Web Development Agency | Jaipur, India",
   description: "Webio builds fast, beautiful, and scalable websites for businesses. From business websites to custom web apps — we craft digital experiences that drive growth.",
-  metadataBase: new URL("https://webio.agency"),
+  metadataBase: new URL("https://www.webio.co.in"),
   openGraph: {
     title: "Webio — Premium Web Development Agency",
     description: "Webio builds fast, beautiful, and scalable websites for businesses. From business websites to custom web apps — we craft digital experiences that drive growth.",
-    url: "https://webio.agency",
+    url: "https://www.webio.co.in",
     siteName: "Webio",
     images: [
       {
@@ -61,9 +61,9 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
               "name": "Webio",
-              "image": "https://webio.agency/og-image.png",
-              "@id": "https://webio.agency/#localbusiness",
-              "url": "https://webio.agency",
+              "image": "https://www.webio.co.in/og-image.png",
+              "@id": "https://www.webio.co.in/#localbusiness",
+              "url": "https://www.webio.co.in",
               "telephone": "+919351864351",
               "priceRange": "₹₹",
               "address": {

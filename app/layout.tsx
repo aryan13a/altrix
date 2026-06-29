@@ -19,6 +19,9 @@ export const metadata: Metadata = {
   title: "Webio — Premium Web Development Agency | Jaipur, India",
   description: "Webio builds fast, beautiful, and scalable websites for businesses. From business websites to custom web apps — we craft digital experiences that drive growth.",
   metadataBase: new URL("https://www.webio.co.in"),
+  alternates: {
+    canonical: "https://www.webio.co.in",
+  },
   openGraph: {
     title: "Webio — Premium Web Development Agency",
     description: "Webio builds fast, beautiful, and scalable websites for businesses. From business websites to custom web apps — we craft digital experiences that drive growth.",

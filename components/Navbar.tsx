@@ -4,6 +4,8 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ArrowRight } from "lucide-react";
+import Image from "next/image";
+import logoImg from "@/app/logo.png";
 import { mobileMenuVariants, mobileMenuItemVariants } from "@/lib/animations";
 
 const navLinks = [
@@ -61,10 +63,14 @@ export default function Navbar() {
         <div className="mx-auto max-w-7xl px-6 h-20 flex items-center justify-between w-full">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2 group">
-            <span className="font-display font-extrabold text-2xl tracking-tight text-white transition-colors duration-300 group-hover:text-altrix-indigo">
-              WEBIO
-            </span>
-            <span className="w-1.5 h-1.5 rounded-full bg-altrix-cyan animate-pulse"></span>
+            <Image
+              src={logoImg}
+              alt="Webio Logo"
+              width={130}
+              height={36}
+              className="h-9 w-auto object-contain transition-opacity duration-300 group-hover:opacity-90"
+              priority
+            />
           </Link>
 
           {/* Desktop Nav Links */}

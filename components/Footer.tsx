@@ -2,7 +2,9 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
+import logoImg from "@/app/logo.png";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -23,11 +25,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 mb-16">
           {/* Column 1 (5 Cols on large) */}
           <div className="lg:col-span-5 flex flex-col space-y-6">
-            <Link href="/" className="flex items-center space-x-2 w-max">
-              <span className="font-display font-extrabold text-2xl tracking-tight text-white hover:text-altrix-indigo transition-colors duration-300">
-                WEBIO
-              </span>
-              <span className="w-1.5 h-1.5 rounded-full bg-altrix-cyan"></span>
+            <Link href="/" className="flex items-center space-x-2 w-max group">
+              <Image
+                src={logoImg}
+                alt="Webio Logo"
+                width={120}
+                height={32}
+                className="h-8 w-auto object-contain transition-opacity duration-300 group-hover:opacity-90"
+              />
             </Link>
             
             <p className="text-sm text-white/55 leading-relaxed max-w-sm">

@@ -17,14 +17,14 @@ const syne = Syne({
 
 export const metadata: Metadata = {
   title: "Premium Website at ₹9,990 with Free SEO | Webio India",
-  description: "Webio builds fast, beautiful, and scalable websites for businesses. From business websites to custom web apps — we craft digital experiences that drive growth.",
+  description: "Get a professional, fast, mobile-ready website for just ₹9,990. Free SEO setup included. No monthly fees. Built for Indian small businesses. Contact us today.",
   metadataBase: new URL("https://www.webio.co.in"),
   alternates: {
     canonical: "https://www.webio.co.in",
   },
   openGraph: {
     title: "Webio — Premium Web Development Agency",
-    description: "Webio builds fast, beautiful, and scalable websites for businesses. From business websites to custom web apps — we craft digital experiences that drive growth.",
+    description: "Get a professional, fast, mobile-ready website for just ₹9,990. Free SEO setup included. No monthly fees. Built for Indian small businesses. Contact us today.",
     url: "https://www.webio.co.in",
     siteName: "Webio",
     images: [

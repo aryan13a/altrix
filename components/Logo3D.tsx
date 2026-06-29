@@ -70,7 +70,7 @@ export default function Logo3D() {
 
         // Scale model appropriately to fit viewport
         const maxDim = Math.max(size.x, size.y, size.z);
-        const scaleFactor = 2.4 / maxDim; // Fit inside ~2.4 unit sphere
+        const scaleFactor = 3.2 / maxDim; // Fit inside ~3.2 unit sphere
         model.scale.set(scaleFactor, scaleFactor, scaleFactor);
 
         // Tilt model slightly for better 3D preview angle

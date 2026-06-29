@@ -99,7 +99,7 @@ export default function Contact() {
                           value={formData.name}
                           onChange={handleInputChange}
                           className="px-4 py-3 rounded-xl glass-input text-white text-sm"
-                          placeholder="Aryan Kumawat"
+                          placeholder="John Doe"
                         />
                       </div>
                       {/* Business Name */}
@@ -244,7 +244,7 @@ export default function Contact() {
                       Message Sent!
                     </h3>
                     <p className="text-white/60 text-sm max-w-sm leading-relaxed mb-8">
-                      Thank you! We&apos;ve successfully received your details. Aryan or our team will get in touch with you within 24 hours.
+                      Thank you! We&apos;ve successfully received your details. Our team will get in touch with you within 24 hours.
                     </p>
                     <button
                       onClick={() => setIsSuccess(false)}

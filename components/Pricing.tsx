@@ -121,7 +121,7 @@ export default function Pricing() {
                 {/* Price */}
                 <div className="mb-8">
                   <div className="flex items-center gap-2 mb-1 flex-wrap">
-                    <span className="font-display font-extrabold text-3xl sm:text-4xl text-white tracking-tight">
+                    <span className="font-sans font-extrabold text-3xl sm:text-4xl text-white tracking-tight">
                       {pkg.price}
                     </span>
                   </div>
@@ -208,7 +208,7 @@ export default function Pricing() {
               <div className="p-8 rounded-2xl bg-black/40 border border-white/5 w-full text-center lg:text-right max-w-sm">
                 <span className="text-xs text-white/45 uppercase tracking-widest block mb-2">Starting at</span>
                 <div className="flex items-baseline justify-center lg:justify-end mb-4">
-                  <span className="font-display font-extrabold text-4xl sm:text-5xl text-white">₹12,490</span>
+                  <span className="font-sans font-extrabold text-4xl sm:text-5xl text-white">₹12,490</span>
                   <span className="text-xs text-white/40 ml-2 font-mono">/ setup</span>
                 </div>
                 <p className="text-xs text-white/50 mb-6 leading-relaxed">

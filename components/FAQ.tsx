@@ -11,6 +11,22 @@ interface FAQItem {
 
 const faqs: FAQItem[] = [
   {
+    question: "How much does a website cost in India?",
+    answer: "Webio builds premium, fully responsive websites for ₹9,990 one-time. No monthly fees, no hidden charges. The price includes design, development, and free SEO setup.",
+  },
+  {
+    question: "What is included in the ₹9,990 plan?",
+    answer: "You get a custom-designed, mobile-responsive website built on Next.js, on-page SEO setup (meta tags, schema, sitemap, robots.txt), WhatsApp CTA integration, and one round of revisions — all for ₹9,990.",
+  },
+  {
+    question: "Do you charge extra for SEO?",
+    answer: "No. SEO setup is included in the ₹9,990 package at no extra cost. This includes meta title and description optimisation, FAQ schema, image alt tags, sitemap, and Google Search Console submission.",
+  },
+  {
+    question: "Is there a monthly fee after the one-time payment?",
+    answer: "No recurring or monthly fees. You pay ₹9,990 once and own the website. Optional hosting and maintenance plans are available separately if needed.",
+  },
+  {
     question: "How long does a website take to build?",
     answer: "Typically between 7 to 21 days depending on complexity and page count. Our Starter package takes just 7 days, whereas custom or payment integrated applications take 14 to 21 days. We scope milestones transparently so you always know exactly when your site goes live.",
   },

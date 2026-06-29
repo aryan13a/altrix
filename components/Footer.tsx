@@ -114,14 +114,24 @@ export default function Footer() {
           {/* Column 3 (Services - 2.5 Cols) */}
           <div className="lg:col-span-2.5 flex flex-col space-y-4">
             <h4 className="font-display font-bold text-xs uppercase tracking-widest text-altrix-cyan mb-2">
-              Services
+              SEO Offers
             </h4>
             <ul className="space-y-2">
-              <li className="text-sm text-white/55">Business Sites</li>
-              <li className="text-sm text-white/55">Web Applications</li>
-              <li className="text-sm text-white/55">Landing Pages</li>
-              <li className="text-sm text-white/55">SEO Optimization</li>
-              <li className="text-sm text-white/55">Active Maintenance</li>
+              <li>
+                <Link href="/cheap-website-free-seo-india" className="text-sm text-white/55 hover:text-white transition-colors">
+                  Cheap SEO Website
+                </Link>
+              </li>
+              <li>
+                <Link href="/affordable-website-india" className="text-sm text-white/55 hover:text-white transition-colors">
+                  Affordable Website India
+                </Link>
+              </li>
+              <li>
+                <Link href="/no-upfront-cost-website" className="text-sm text-white/55 hover:text-white transition-colors">
+                  No Upfront Cost Website
+                </Link>
+              </li>
             </ul>
           </div>
 

@@ -10,7 +10,6 @@ const packages = [
   {
     name: "Starter Website",
     price: "₹9,999",
-    originalPrice: "₹25,999",
     description: "Perfect for startups and local businesses getting online.",
     features: [
       "Up to 3 Pages",
@@ -26,7 +25,6 @@ const packages = [
   {
     name: "Premium Website",
     price: "₹14,999",
-    originalPrice: "₹44,999",
     description: "For businesses that need a serious, custom online presence.",
     features: [
       "Fully Custom Design (no templates)",
@@ -43,7 +41,6 @@ const packages = [
   {
     name: "Full-Fledged E-Commerce",
     price: "₹25,999",
-    originalPrice: "₹124,999",
     description: "For businesses ready to transact and sell online at scale.",
     features: [
       "Custom E-Commerce Storefront",
@@ -127,11 +124,6 @@ export default function Pricing() {
                     <span className="font-display font-extrabold text-3xl sm:text-4xl text-white tracking-tight">
                       {pkg.price}
                     </span>
-                    {pkg.originalPrice && (
-                      <span className="text-xs sm:text-sm text-white/40 line-through font-mono">
-                        {pkg.originalPrice}
-                      </span>
-                    )}
                   </div>
                   <span className="text-[10px] sm:text-xs text-white/40 font-mono block">
                     / fixed price

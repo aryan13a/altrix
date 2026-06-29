@@ -5,8 +5,11 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ArrowRight } from "lucide-react";
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import logoImg from "@/app/logo.png";
 import { mobileMenuVariants, mobileMenuItemVariants } from "@/lib/animations";
+
+const Logo3D = dynamic(() => import("./Logo3D"), { ssr: false });
 
 const navLinks = [
   { name: "Services", href: "#services" },
@@ -63,6 +66,7 @@ export default function Navbar() {
         <div className="mx-auto max-w-7xl px-6 h-20 flex items-center justify-between w-full">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2 group">
+            <Logo3D />
             <Image
               src={logoImg}
               alt="Webio Logo"

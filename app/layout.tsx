@@ -98,6 +98,49 @@ export default function RootLayout({
             })
           }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "How much does a website cost in India?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Webio builds premium, fully responsive websites for ₹9,990 one-time. No monthly fees, no hidden charges. The price includes design, development, and free SEO setup."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What is included in the ₹9,990 plan?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "You get a custom-designed, mobile-responsive website built on Next.js, on-page SEO setup, WhatsApp CTA integration, and one round of revisions — all for ₹9,990."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Do you charge extra for SEO?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. SEO setup is included in the ₹9,990 package at no extra cost. This includes meta title and description optimisation, FAQ schema, image alt tags, sitemap, and Google Search Console submission."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Is there a monthly fee after the one-time payment?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No recurring or monthly fees. You pay ₹9,990 once and own the website."
+                  }
+                }
+              ]
+            })
+          }}
+        />
       </head>
       <body
         className={`${inter.variable} ${syne.variable} font-sans bg-altrix-dark text-white antialiased`}

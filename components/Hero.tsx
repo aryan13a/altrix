@@ -79,7 +79,7 @@ export default function Hero() {
             </Link>
 
             <a
-              href="https://wa.me/919351864351?text=Hi%20Webio%2C%20I%20want%20to%20claim%20the%20Premium%20Website%20offer%20at%20%E2%82%B99%2C990%20with%20free%20SEO%21"
+              href="https://wa.me/919571425884?text=Hi%20Webio%2C%20I%20want%20to%20claim%20the%20Premium%20Website%20offer%20at%20%E2%82%B99%2C990%20with%20free%20SEO%21"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 rounded-full border border-white/20 hover:border-white/40 bg-white/0 hover:bg-white/5 text-base font-semibold text-white transition-all duration-300 group"

@@ -68,7 +68,7 @@ export default function RootLayout({
               "image": "https://www.webio.co.in/og-image.png",
               "@id": "https://www.webio.co.in/#localbusiness",
               "url": "https://www.webio.co.in",
-              "telephone": "+919351864351",
+              "telephone": "+919571425884",
               "priceRange": "₹9,990",
               "areaServed": "India",
               "address": {

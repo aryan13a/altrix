@@ -92,7 +92,7 @@ export default function AffordableWebsitePage() {
           {/* WhatsApp CTA */}
           <div className="flex flex-col sm:flex-row items-center gap-4 mb-20">
             <a
-              href="https://wa.me/919351864351?text=Hi%20Webio%2C%20I%20am%20interested%20in%20your%20Affordable%20Website%20for%20Indian%20Small%20Businesses%20package."
+              href="https://wa.me/919571425884?text=Hi%20Webio%2C%20I%20am%20interested%20in%20your%20Affordable%20Website%20for%20Indian%20Small%20Businesses%20package."
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-full bg-emerald-600 hover:bg-emerald-700 text-base font-bold text-white transition-all duration-300 shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:scale-102"

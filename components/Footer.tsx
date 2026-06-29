@@ -143,7 +143,7 @@ export default function Footer() {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="https://wa.me/919351864351"
+                  href="https://wa.me/919571425884"
                   className="text-sm text-white/55 hover:text-white transition-colors flex items-center gap-1 group"
                 >
                   WhatsApp

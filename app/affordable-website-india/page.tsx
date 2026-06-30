@@ -36,6 +36,14 @@ const faqSchema = {
     },
     {
       "@type": "Question",
+      "name": "Do I need to pay any upfront fees before my website development begins?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, we do not charge any upfront fees. We first design and develop your website based on the requirements and details you provide. Once the website is completed and you are fully satisfied with the final result, we proceed with deployment and request payment. As a complimentary service, we also provide basic SEO setup to help improve your website's visibility on search engines after deployment."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "Do you charge extra for SEO?",
       "acceptedAnswer": {
         "@type": "Answer",

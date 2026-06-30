@@ -19,6 +19,10 @@ const faqs: FAQItem[] = [
     answer: "You get a custom-designed, mobile-responsive website built on Next.js, on-page SEO setup (meta tags, schema, sitemap, robots.txt), WhatsApp CTA integration, and one round of revisions — all for ₹9,990.",
   },
   {
+    question: "Do I need to pay any upfront fees before my website development begins?",
+    answer: "No, we do not charge any upfront fees. We first design and develop your website based on the requirements and details you provide. Once the website is completed and you are fully satisfied with the final result, we proceed with deployment and request payment. As a complimentary service, we also provide basic SEO setup to help improve your website's visibility on search engines after deployment.",
+  },
+  {
     question: "Do you charge extra for SEO?",
     answer: "No. SEO setup is included in the ₹9,990 package at no extra cost. This includes meta title and description optimisation, FAQ schema, image alt tags, sitemap, and Google Search Console submission.",
   },

@@ -128,7 +128,7 @@ export default function Contact() {
                           value={formData.business}
                           onChange={handleInputChange}
                           className="px-4 py-3 rounded-xl glass-input text-white text-sm"
-                          placeholder="Acme Corp"
+                          placeholder="Business Name"
                         />
                       </div>
                     </div>
@@ -162,7 +162,7 @@ export default function Contact() {
                           value={formData.phone}
                           onChange={handleInputChange}
                           className="px-4 py-3 rounded-xl glass-input text-white text-sm"
-                          placeholder="+91 98765 43210"
+                          placeholder="Phone Number"
                         />
                       </div>
                     </div>
